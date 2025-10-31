@@ -132,4 +132,3 @@ pnpm install   # or: npm install
 # run dev server
 pnpm run dev   # or: npm run dev
 ```
-~~~~
