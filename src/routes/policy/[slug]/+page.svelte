@@ -13,12 +13,15 @@
 
 <style>
 	.policy-detail {
-		padding: 24px 0 48px;
+		padding: 24px 24px;
 	}
 	.policy-detail .back {
 		text-decoration: none;
 		color: #666;
 		font-size: 14px;
+	}
+	.content {
+		margin-top: 16px;
 	}
 	.content :global(h2) {
 		margin-top: 20px;

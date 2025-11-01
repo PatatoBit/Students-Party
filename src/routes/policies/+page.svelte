@@ -47,7 +47,7 @@
 	}
 
 	.policies-page {
-		padding: 24px 0 40px;
+		padding: 24px 40px;
 	}
 	.policy-list {
 		list-style: none;
