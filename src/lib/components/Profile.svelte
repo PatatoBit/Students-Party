@@ -7,7 +7,7 @@
 	<h2 class="anakotmai">นีโอเป็นใคร</h2>
 	<div class="profile-content">
 		<div class="profile-image">
-			<img src={placeholder(300, 400, 'Neo')} alt="profile" />
+			<img src="/images/NeoBio.jpg" alt="profile" />
 		</div>
 		<div class="profile-info">
 			<h3>ณธกร รุ่งศุภกิจ (นีโอ)</h3>
