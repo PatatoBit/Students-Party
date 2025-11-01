@@ -68,14 +68,7 @@
 		box-shadow: 0 8px 18px rgba(12, 18, 32, 0.06);
 		padding: 16px;
 	}
-	.policy-item .title {
-		font-weight: 600;
-		text-decoration: none;
-		color: #2b2d42;
-	}
-	.policy-item .title:hover {
-		text-decoration: underline;
-	}
+
 	.policy-item .summary {
 		margin: 8px 0 0 0;
 		color: #666;

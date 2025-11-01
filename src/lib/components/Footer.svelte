@@ -3,7 +3,7 @@
 		<div class="contact">
 			<h3>ติดต่อ</h3>
 			<p>ห้อง 161</p>
-			<p>22199@satitpatumwan.ac.th</p>
+			<a href="mailto:22199@satitpatumwan.ac.th">22199@satitpatumwan.ac.th</a>
 			<p>neokungid</p>
 		</div>
 
