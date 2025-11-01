@@ -7,19 +7,19 @@
 	<h2 class="anakotmai">นโยบาย</h2>
 	<div class="cards">
 		<article class="card">
-			<img src={placeholder(600, 400, 'Device Support')} alt="policy" />
+			<img src="/images/PolicyPreviews/printer.png" alt="Printer" />
 			<h4>เครื่องปรินท์สี</h4>
 			<p>สั่งปรินท์และจ่ายบนเว็ปออนไลน์ แค่มารับของ</p>
 		</article>
 
 		<article class="card">
-			<img src={placeholder(600, 400, 'Website')} alt="policy" />
+			<img src="/images/PolicyPreviews/office.png" alt="Teacher office" />
 			<h4>เว็ปไซต์ตามหาอาจารย์</h4>
 			<p>สั่งปรินท์และจ่ายบนเว็ปออนไลน์ แค่มารับของ</p>
 		</article>
 
 		<article class="card">
-			<img src={placeholder(600, 400, 'Uniforms')} alt="policy" />
+			<img src="/images/PolicyPreviews/bags.png" alt="Students" />
 			<h4>ผลักดันการใช้รองเท้า และกระเป๋าเสรี</h4>
 			<p>สั่งปรินท์และจ่ายบนเว็ปออนไลน์ แค่มารับของ</p>
 		</article>
