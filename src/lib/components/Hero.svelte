@@ -16,7 +16,7 @@
 				<img src="/images/Crossbox.png" alt="Choose number 1" />
 			</div>
 
-			<div class="name">13 พฤศจิกายน 2568</div>
+			<div class="name">14 พฤศจิกายน 2568</div>
 		</div>
 	</div>
 </section>
