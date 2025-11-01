@@ -103,7 +103,7 @@
 		<div class="contact">
 			<h3>ติดต่อ</h3>
 			<p>ห้อง 161</p>
-			<p>22197@satitpatumwan.ac.th</p>
+			<p>22199@satitpatumwan.ac.th</p>
 			<p>neokungid</p>
 		</div>
 
