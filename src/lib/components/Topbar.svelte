@@ -37,14 +37,14 @@
 			{#if showMenu}
 				<nav class="mobile-nav" transition:slide={{ duration: 220 }}>
 					<a href="/policies">นโยบาย</a>
-					<a href="/#platform">ความคืบหน้า</a>
+					<a href="/progress">ความคืบหน้า</a>
 					<a href="/#contact">ติดต่อ</a>
 				</nav>
 			{/if}
 		{:else}
 			<nav>
 				<a href="/policies">นโยบาย</a>
-				<a href="/#platform">ความคืบหน้า</a>
+				<a href="/progress">ความคืบหน้า</a>
 				<a href="/#contact">ติดต่อ</a>
 			</nav>
 		{/if}
