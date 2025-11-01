@@ -26,8 +26,7 @@
 			<blockquote class="quote">“ ยกเลิกทำข้อสอบ เพราะทุกคำตอบคือเธอ “</blockquote>
 
 			<div class="score-box">
-				<div class="mul">×</div>
-				<div class="n">1</div>
+				<img src="/images/Crossbox.png" alt="Choose number 1" />
 			</div>
 
 			<div class="name">ณธกร รุ่งศุภกิจ (นีโอ)</div>
@@ -51,14 +50,14 @@
 					<li>หัวหน้าห้อง 131 และ 161</li>
 					<li>รางวัลเรียนดี 2567</li>
 					<li>โรงเรียนบดินทรเดชา (สิงห์ สิงหเสนี) เกรดเฉลี่ย 3.87</li>
-					<li>สาธิต ปทุมวัน ม.4 เกรดเฉลี่ย 3.95</li>
+					<li>โรงเรียนสาธิต มศว ปทุมวัน ม.4 เกรดเฉลี่ย 3.95</li>
 				</ul>
 
 				<div class="social-links">
 					<h4>ติดตามได้ที่</h4>
 					<div class="social-icons">
 						<!-- svelte-ignore a11y_consider_explicit_label -->
-						<a href="/https://www.instagram.com/nxthxkxrnr001/" target="_blank" class="social-btn">
+						<a href="https://www.instagram.com/nxthxkxrnr001/" target="_blank" class="social-btn">
 							<svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
 								<path
 									d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
@@ -105,7 +104,7 @@
 			<h3>ติดต่อ</h3>
 			<p>ห้อง 161</p>
 			<p>22197@satitpatumwan.ac.th</p>
-			<p>lineid_here</p>
+			<p>neokungid</p>
 		</div>
 
 		<div class="footer-brand">
@@ -184,25 +183,10 @@
 	.score-box {
 		display: flex;
 		align-items: center;
-		gap: 12px;
 		margin-top: 6px;
+		border: 3px solid white;
 	}
-	.score-box .mul {
-		font-size: 44px;
-		font-weight: 700;
-	}
-	.score-box .n {
-		width: 72px;
-		height: 72px;
-		background: #fff;
-		color: #2fb04a;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		font-weight: 800;
-		border-radius: 6px;
-		font-size: 34px;
-	}
+
 	.name {
 		font-weight: 700;
 		opacity: 0.95;
@@ -222,6 +206,8 @@
 
 	.profile-content {
 		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
 		gap: 24px;
 		margin-top: 16px;
 	}
@@ -367,13 +353,10 @@
 			align-items: center;
 		}
 
-		.profile_content {
-			flex-direction: column;
-			align-items: center;
-		}
 		.profile-image {
 			order: 1;
 			flex: 0 0 250px;
+			margin-inline: auto;
 		}
 		.profile-info {
 			order: 2;
