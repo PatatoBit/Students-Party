@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@100..900&display=swap');
+
+*::before,
+*::after,
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+@font-face {
+	font-family: 'Anakotmai';
+	src:
+		url('../assets/fonts/Anakotmai-Regular.woff2') format('woff2'),
+		url('../assets/fonts/Anakotmai-Regular.woff') format('woff');
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
+}
+
+.anakotmai {
+	font-family: 'Anakotmai', system-ui, sans-serif;
+}
+
+.anakot-mai-bold {
+	font-family: 'Anakotmai', system-ui, sans-serif;
+	font-weight: 700;
+}
+
+.anakot-mai-light {
+	font-family: 'Anakotmai', system-ui, sans-serif;
+	font-weight: 300;
+}
+
+html,
+body,
+blockquote,
+* {
+	font-family: 'Noto Sans Thai', system-ui, sans-serif;
+}
+
+a {
+	color: inherit;
+}
+
+h1 {
+	font-size: 2.5rem;
+}
+h2 {
+	font-size: 1.8rem;
+}
+
+p {
+	font-size: 1rem;
+}
