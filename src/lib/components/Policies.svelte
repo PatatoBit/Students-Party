@@ -14,14 +14,14 @@
 
 		<article class="card">
 			<img src="/images/PolicyPreviews/office.png" alt="Teacher office" />
-			<h4>เว็ปไซต์ตามหาอาจารย์</h4>
-			<p>สั่งปรินท์และจ่ายบนเว็ปออนไลน์ แค่มารับของ</p>
+			<h4>เว็บไซต์ตามหาอาจารย์</h4>
+			<p>ตามหาห้องของอาจารย์ เพียงแค่กรอกชื่อ</p>
 		</article>
 
 		<article class="card">
 			<img src="/images/PolicyPreviews/bags.png" alt="Students" />
 			<h4>ผลักดันการใช้รองเท้า และกระเป๋าเสรี</h4>
-			<p>สั่งปรินท์และจ่ายบนเว็ปออนไลน์ แค่มารับของ</p>
+			<p>สนับสนุนให้นักเรียนให้สามารถใช้รองเท้าและกระเป๋าอิสระ</p>
 		</article>
 	</div>
 
