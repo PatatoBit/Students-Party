@@ -21,6 +21,6 @@
 		padding-top: 40px;
 		display: flex;
 		flex-direction: column;
-		gap: 40px;
+		gap: 80px;
 	}
 </style>

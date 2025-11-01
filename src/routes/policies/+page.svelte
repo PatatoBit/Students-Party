@@ -64,7 +64,7 @@
 	}
 	.policy-item {
 		background: #fff;
-		border-radius: 8px;
+		border-radius: 5px;
 		box-shadow: 0 8px 18px rgba(12, 18, 32, 0.06);
 		padding: 16px;
 	}

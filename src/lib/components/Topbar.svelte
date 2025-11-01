@@ -2,6 +2,7 @@
 	const logo = '/images/MainLogo.png';
 
 	import { onMount } from 'svelte';
+	import { slide } from 'svelte/transition';
 
 	let showMenu = false;
 	let isMobile = false;
@@ -28,13 +29,13 @@
 			<img src={logo} alt="logo" class="logo" />
 		</a>
 		{#if isMobile}
-			<button class="hamburger" aria-label="Open menu" on:click={toggleMenu}>
+			<button class="hamburger" class:open={showMenu} aria-label="Open menu" on:click={toggleMenu}>
 				<span class="bar"></span>
 				<span class="bar"></span>
 				<span class="bar"></span>
 			</button>
 			{#if showMenu}
-				<nav class="mobile-nav">
+				<nav class="mobile-nav" transition:slide={{ duration: 220 }}>
 					<a href="/policies">นโยบาย</a>
 					<a href="/#platform">ความคืบหน้า</a>
 					<a href="/#contact">ติดต่อ</a>
@@ -114,7 +115,20 @@
 		background: #333;
 		margin: 4px 0;
 		border-radius: 2px;
-		transition: 0.3s;
+		transition:
+			transform 0.25s ease,
+			opacity 0.2s ease,
+			background 0.2s ease;
+	}
+	/* Hamburger -> X animation */
+	.hamburger.open .bar:nth-child(1) {
+		transform: translateY(8px) rotate(45deg);
+	}
+	.hamburger.open .bar:nth-child(2) {
+		opacity: 0;
+	}
+	.hamburger.open .bar:nth-child(3) {
+		transform: translateY(-8px) rotate(-45deg);
 	}
 	.mobile-nav {
 		position: absolute;

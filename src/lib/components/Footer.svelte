@@ -4,7 +4,7 @@
 			<h3>ติดต่อ</h3>
 			<p>ห้อง 161</p>
 			<a href="mailto:22199@satitpatumwan.ac.th">22199@satitpatumwan.ac.th</a>
-			<p>neokungid</p>
+			<p>Line: neokungid</p>
 		</div>
 
 		<div class="footer-brand">

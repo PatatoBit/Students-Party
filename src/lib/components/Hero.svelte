@@ -1,21 +1,22 @@
 <script>
+	import { fly, fade } from 'svelte/transition';
 	const heroImage = '/images/Neo_Grayscale.png';
 </script>
 
 <section class="hero">
 	<div class="hero-inner container">
-		<div class="hero-left">
+		<div class="hero-left" in:fly={{ x: -40, duration: 350 }}>
 			<img src={heroImage} alt="candidate" class="hero-photo" />
 		</div>
 
-		<div class="hero-right">
+		<div class="hero-right" in:fly={{ x: 40, duration: 380, delay: 60 }}>
 			<blockquote class="quote">“ ยกเลิกทำข้อสอบ เพราะทุกคำตอบคือเธอ “</blockquote>
 
 			<div class="score-box">
 				<img src="/images/Crossbox.png" alt="Choose number 1" />
 			</div>
 
-			<div class="name">ณธกร รุ่งศุภกิจ (นีโอ)</div>
+			<div class="name">13 พฤศจิกายน 2568</div>
 		</div>
 	</div>
 </section>
@@ -29,6 +30,7 @@
 	.hero-inner {
 		display: flex;
 		align-items: center;
+		justify-content: center;
 		gap: 36px;
 	}
 	.hero-left {
@@ -45,7 +47,8 @@
 		flex: 1;
 		display: flex;
 		flex-direction: column;
-		align-items: flex-start;
+		align-items: center;
+		text-align: center;
 		gap: 18px;
 	}
 	.quote {
