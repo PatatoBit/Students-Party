@@ -25,10 +25,12 @@
 
 	<ul class="policy-list">
 		{#each policies as p}
-			<li class="policy-item">
-				<a class="title" href={`/policy/${p.slug}`}>{p.title}</a>
-				<p class="summary">{excerpt(p.content)}</p>
-			</li>
+			<a class="title" href={`/policy/${p.slug}`}>
+				<li class="policy-item">
+					<h3>{p.title}</h3>
+					<p class="summary">{excerpt(p.content)}</p>
+				</li>
+			</a>
 		{/each}
 	</ul>
 </main>
@@ -36,6 +38,10 @@
 <Footer />
 
 <style>
+	a {
+		text-decoration: none;
+	}
+
 	.container {
 		min-height: 100vh;
 	}

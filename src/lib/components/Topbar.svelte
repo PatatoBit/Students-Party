@@ -8,7 +8,7 @@
 			<img src={logo} alt="logo" class="logo" />
 		</a>
 		<nav>
-			<a href="/#policy">นโยบาย</a>
+			<a href="/policies">นโยบาย</a>
 			<a href="/#platform">ความคืบหน้า</a>
 			<a href="/#contact">ติดต่อ</a>
 		</nav>
