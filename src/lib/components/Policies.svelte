@@ -6,23 +6,29 @@
 <section class="policies" id="policy">
 	<h2 class="anakotmai">นโยบาย</h2>
 	<div class="cards">
-		<article class="card">
-			<img src="/images/PolicyPreviews/printer.png" alt="Printer" />
-			<h4>เครื่องปรินท์สี</h4>
-			<p>สั่งปรินท์และจ่ายบนเว็ปออนไลน์ แค่มารับของ</p>
-		</article>
+		<a href="/policy/device-printing">
+			<article class="card">
+				<img src="/images/PolicyPreviews/printer.png" alt="Printer" />
+				<h4>เครื่องปรินท์สี</h4>
+				<p>สั่งปรินท์และจ่ายบนเว็ปออนไลน์ แค่มารับของ</p>
+			</article>
+		</a>
 
-		<article class="card">
-			<img src="/images/PolicyPreviews/office.png" alt="Teacher office" />
-			<h4>เว็บไซต์ตามหาอาจารย์</h4>
-			<p>ตามหาห้องของอาจารย์ เพียงแค่กรอกชื่อ</p>
-		</article>
+		<a href="/policy/free-shoes-and-bag">
+			<article class="card">
+				<img src="/images/PolicyPreviews/office.png" alt="Teacher office" />
+				<h4>เว็บไซต์ตามหาอาจารย์</h4>
+				<p>ตามหาห้องของอาจารย์ เพียงแค่กรอกชื่อ</p>
+			</article>
+		</a>
 
-		<article class="card">
-			<img src="/images/PolicyPreviews/bags.png" alt="Students" />
-			<h4>ผลักดันการใช้รองเท้า และกระเป๋าเสรี</h4>
-			<p>สนับสนุนให้นักเรียนให้สามารถใช้รองเท้าและกระเป๋าอิสระ</p>
-		</article>
+		<a href="/policy/find-lecturer">
+			<article class="card">
+				<img src="/images/PolicyPreviews/bags.png" alt="Students" />
+				<h4>ผลักดันการใช้รองเท้า และกระเป๋าเสรี</h4>
+				<p>สนับสนุนให้นักเรียนให้สามารถใช้รองเท้าและกระเป๋าอิสระ</p>
+			</article>
+		</a>
 	</div>
 
 	<div class="more-policies">
@@ -31,6 +37,15 @@
 </section>
 
 <style>
+	a {
+		text-decoration: none;
+	}
+
+	.more-policies a {
+		font-weight: 600;
+		text-decoration: underline;
+	}
+
 	.policies h2 {
 		color: #2b2d42;
 		margin-bottom: 18px;
