@@ -4,11 +4,13 @@
 
 <header class="topbar">
 	<div class="container">
-		<img src={logo} alt="logo" class="logo" />
+		<a href="/" class="home-link" aria-label="Home">
+			<img src={logo} alt="logo" class="logo" />
+		</a>
 		<nav>
-			<a href="#policy">นโยบาย</a>
-			<a href="#platform">ความคืบหน้า</a>
-			<a href="#contact">ติดต่อ</a>
+			<a href="/#policy">นโยบาย</a>
+			<a href="/#platform">ความคืบหน้า</a>
+			<a href="/#contact">ติดต่อ</a>
 		</nav>
 	</div>
 </header>
@@ -26,6 +28,10 @@
 	}
 	.logo {
 		height: 52px;
+	}
+	.home-link {
+		display: inline-flex;
+		align-items: center;
 	}
 	nav a {
 		margin-left: 24px;

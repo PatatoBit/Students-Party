@@ -11,6 +11,9 @@ importers:
       sass:
         specifier: ^1.93.3
         version: 1.93.3
+      svelte-marked:
+        specifier: ^0.8.0
+        version: 0.8.0(svelte@5.43.2)
     devDependencies:
       '@sveltejs/adapter-vercel':
         specifier: ^6.0.0
@@ -483,6 +486,10 @@ packages:
   '@types/estree@1.0.8':
     resolution: {integrity: sha512-dWHzHa2WqEXI/O1E9OjrocMTKJl2mSrEolh1Iomrv6U+JuNwaHXsXx9bLu5gG7BUWFIN0skIQJQ/L1rIex4X6w==}
 
+  '@types/marked@6.0.0':
+    resolution: {integrity: sha512-jmjpa4BwUsmhxcfsgUit/7A9KbrC48Q0q8KvnY107ogcjGgTFDlIL3RpihNpx2Mu1hM4mdFQjoVc4O6JoGKHsA==}
+    deprecated: This is a stub types definition. marked provides its own type definitions, so you do not need this installed.
+
   '@vercel/nft@0.30.3':
     resolution: {integrity: sha512-UEq+eF0ocEf9WQCV1gktxKhha36KDs7jln5qii6UpPf5clMqDc0p3E7d9l2Smx0i9Pm1qpq4S4lLfNl97bbv6w==}
     engines: {node: '>=18'}
@@ -650,6 +657,9 @@ packages:
     engines: {node: ^8.16.0 || ^10.6.0 || >=11.0.0}
     os: [darwin]
 
+  github-slugger@2.0.0:
+    resolution: {integrity: sha512-IaOQ9puYtjrkq7Y0Ygl9KDZnrf/aiUJYUpVf89y8kyaxbRG7Y1SrX/jaumrv81vc61+kiMempujsM3Yw7w5qcw==}
+
   glob@10.4.5:
     resolution: {integrity: sha512-7Bv8RF0k6xjo7d4A/PxYLbUCfb6c+Vpd2/mB2yRDlew7Jb5hEXiCD9ibfO7wpk8i4sevK6DFny9h7EYbM3/sHg==}
     hasBin: true
@@ -701,6 +711,11 @@ packages:
 
   magic-string@0.30.21:
     resolution: {integrity: sha512-vd2F4YUyEXKGcLHoq+TEyCjxueSeHnFxyyjNp80yg0XV4vUhnDer/lvvlqM/arB5bXQN5K2/3oinyCRyx8T2CQ==}
+
+  marked@15.0.7:
+    resolution: {integrity: sha512-dgLIeKGLx5FwziAnsk4ONoGwHwGPJzselimvlVskE9XLN4Orv9u2VA3GWw/lYUqjfA0rUT/6fqKwfZJapP9BEg==}
+    engines: {node: '>= 18'}
+    hasBin: true
 
   micromatch@4.0.8:
     resolution: {integrity: sha512-PXwfBhYu0hBCPw8Dn0E+WDYb7af3dSLVWKi3HGv84IdF4TyFoC0ysxFd0Goxw7nSv4T/PzEJQxsYsEiFCKo2BA==}
@@ -865,6 +880,11 @@ packages:
     peerDependencies:
       svelte: ^4.0.0 || ^5.0.0-next.0
       typescript: '>=5.0.0'
+
+  svelte-marked@0.8.0:
+    resolution: {integrity: sha512-qOtPoMTZS4Syq+Tfx3Eux/M73lHETSQHrkgLPY6/LeTNQL3bQ+ckS/+DyV1B9HAy5KVUH/qxGypWiO7nsFMa1Q==}
+    peerDependencies:
+      svelte: ^5
 
   svelte@5.43.2:
     resolution: {integrity: sha512-ro1umEzX8rT5JpCmlf0PPv7ncD8MdVob9e18bhwqTKNoLjS8kDvhVpaoYVPc+qMwDAOfcwJtyY7ZFSDbOaNPgA==}
@@ -1293,6 +1313,10 @@ snapshots:
 
   '@types/estree@1.0.8': {}
 
+  '@types/marked@6.0.0':
+    dependencies:
+      marked: 15.0.7
+
   '@vercel/nft@0.30.3(rollup@4.52.5)':
     dependencies:
       '@mapbox/node-pre-gyp': 2.0.0
@@ -1452,6 +1476,8 @@ snapshots:
   fsevents@2.3.3:
     optional: true
 
+  github-slugger@2.0.0: {}
+
   glob@10.4.5:
     dependencies:
       foreground-child: 3.3.1
@@ -1506,6 +1532,8 @@ snapshots:
   magic-string@0.30.21:
     dependencies:
       '@jridgewell/sourcemap-codec': 1.5.5
+
+  marked@15.0.7: {}
 
   micromatch@4.0.8:
     dependencies:
@@ -1668,6 +1696,13 @@ snapshots:
       typescript: 5.9.3
     transitivePeerDependencies:
       - picomatch
+
+  svelte-marked@0.8.0(svelte@5.43.2):
+    dependencies:
+      '@types/marked': 6.0.0
+      github-slugger: 2.0.0
+      marked: 15.0.7
+      svelte: 5.43.2
 
   svelte@5.43.2:
     dependencies:
