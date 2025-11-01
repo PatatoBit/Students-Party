@@ -47,12 +47,13 @@
 	}
 
 	.policies-page {
-		padding: 24px 40px;
+		padding: 24px 32px;
 	}
 	.policy-list {
 		list-style: none;
 		margin: 0;
 		padding: 0;
+		padding-top: 16px;
 		display: grid;
 		grid-template-columns: repeat(1, minmax(0, 1fr));
 		gap: 18px;
