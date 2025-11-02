@@ -8,12 +8,28 @@
 
 	const searchQuery = writable('');
 
-	const filteredPolicies = derived([searchQuery], ([$searchQuery]) => {
-		return policies.filter(
-			(p) =>
-				p.title.toLowerCase().includes($searchQuery.toLowerCase()) ||
-				excerpt(p.content).toLowerCase().includes($searchQuery.toLowerCase())
+	const selectedTags = writable<string[]>([]);
+
+	const allTags: string[] = Array.from(new Set(policies.flatMap((p) => p.tags || []))).sort(
+		(a, b) => a.localeCompare(b, 'th')
+	);
+
+	function toggleTag(tag: string) {
+		selectedTags.update((cur) =>
+			cur.includes(tag) ? cur.filter((t) => t !== tag) : [...cur, tag]
 		);
+	}
+
+	const filteredPolicies = derived([searchQuery, selectedTags], ([$searchQuery, $selectedTags]) => {
+		const q = $searchQuery.trim().toLowerCase();
+		return policies.filter((p) => {
+			const matchesQuery = !q
+				? true
+				: p.title.toLowerCase().includes(q) || excerpt(p.content).toLowerCase().includes(q);
+			const matchesTags =
+				$selectedTags.length === 0 || $selectedTags.every((t) => p.tags?.includes(t));
+			return matchesQuery && matchesTags;
+		});
 	});
 
 	function excerpt(md: string, max = 160) {
@@ -36,12 +52,35 @@
 
 	<input type="text" placeholder="ค้นหานโยบาย..." bind:value={$searchQuery} class="search-box" />
 
+	<!-- Tag filter chips -->
+	{#if allTags.length}
+		<div class="tags-filter" aria-label="ตัวกรองตามแท็ก">
+			{#each allTags as tag}
+				<button
+					type="button"
+					class="tag-chip {$selectedTags.includes(tag) ? 'selected' : ''}"
+					on:click={() => toggleTag(tag)}
+					aria-pressed={$selectedTags.includes(tag)}
+				>
+					{tag}
+				</button>
+			{/each}
+		</div>
+	{/if}
+
 	<ul class="policy-list">
 		{#each $filteredPolicies as p}
 			<a class="title" href={`/policy/${p.slug}`}>
 				<li class="policy-item">
 					<h3>{p.title}</h3>
 					<p class="summary">{excerpt(p.content)}</p>
+					{#if p.tags?.length}
+						<div class="policy-tags">
+							{#each p.tags as tag}
+								<span class="tag-pill">{tag}</span>
+							{/each}
+						</div>
+					{/if}
 				</li>
 			</a>
 		{/each}
@@ -65,6 +104,29 @@
 
 	.policies-page {
 		padding: 24px 24px 32px;
+	}
+
+	.tags-filter {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 8px;
+		margin-bottom: 12px;
+	}
+
+	.tag-chip {
+		border: 1px solid #e0e0e0;
+		background: #fafafa;
+		color: #333;
+		border-radius: 999px;
+		padding: 6px 10px;
+		font-size: 14px;
+		cursor: pointer;
+	}
+
+	.tag-chip.selected {
+		background: #111827;
+		border-color: #111827;
+		color: #fff;
 	}
 	.policy-list {
 		list-style: none;
@@ -106,6 +168,21 @@
 		border: 1px solid #ccc;
 		border-radius: 4px;
 		font-size: 16px;
+	}
+
+	.policy-tags {
+		margin-top: 10px;
+		display: flex;
+		flex-wrap: wrap;
+		gap: 6px;
+	}
+
+	.tag-pill {
+		background: #f1f5f9;
+		color: #334155;
+		border-radius: 999px;
+		padding: 3px 8px;
+		font-size: 12px;
 	}
 
 	.suggest-policy-button {
