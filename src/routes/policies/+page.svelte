@@ -55,7 +55,7 @@
 			{#each allTags as tag}
 				<button
 					type="button"
-					class="tag-chip { $selectedTag === tag ? 'selected' : '' }"
+					class="tag-chip {$selectedTag === tag ? 'selected' : ''}"
 					on:click={() => setTag(tag)}
 					aria-pressed={$selectedTag === tag}
 				>
