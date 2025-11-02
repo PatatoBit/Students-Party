@@ -138,5 +138,13 @@
 			order: 2;
 			width: 100%;
 		}
+
+		.social-links {
+			text-align: center;
+		}
+
+		.social-icons {
+			justify-content: center;
+		}
 	}
 </style>
