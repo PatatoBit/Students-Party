@@ -8,26 +8,23 @@
 
 	const searchQuery = writable('');
 
-	const selectedTags = writable<string[]>([]);
+	const selectedTag = writable<string | null>(null);
 
 	const allTags: string[] = Array.from(new Set(policies.flatMap((p) => p.tags || []))).sort(
 		(a, b) => a.localeCompare(b, 'th')
 	);
 
-	function toggleTag(tag: string) {
-		selectedTags.update((cur) =>
-			cur.includes(tag) ? cur.filter((t) => t !== tag) : [...cur, tag]
-		);
+	function setTag(tag: string) {
+		selectedTag.update((cur) => (cur === tag ? null : tag));
 	}
 
-	const filteredPolicies = derived([searchQuery, selectedTags], ([$searchQuery, $selectedTags]) => {
+	const filteredPolicies = derived([searchQuery, selectedTag], ([$searchQuery, $selectedTag]) => {
 		const q = $searchQuery.trim().toLowerCase();
 		return policies.filter((p) => {
 			const matchesQuery = !q
 				? true
 				: p.title.toLowerCase().includes(q) || excerpt(p.content).toLowerCase().includes(q);
-			const matchesTags =
-				$selectedTags.length === 0 || $selectedTags.every((t) => p.tags?.includes(t));
+			const matchesTags = !$selectedTag || p.tags?.includes($selectedTag);
 			return matchesQuery && matchesTags;
 		});
 	});
@@ -58,9 +55,9 @@
 			{#each allTags as tag}
 				<button
 					type="button"
-					class="tag-chip {$selectedTags.includes(tag) ? 'selected' : ''}"
-					on:click={() => toggleTag(tag)}
-					aria-pressed={$selectedTags.includes(tag)}
+					class="tag-chip { $selectedTag === tag ? 'selected' : '' }"
+					on:click={() => setTag(tag)}
+					aria-pressed={$selectedTag === tag}
 				>
 					{tag}
 				</button>
