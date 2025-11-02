@@ -1,7 +1,8 @@
 <script lang="ts">
+	import { injectAnalytics } from '@vercel/analytics/sveltekit';
+	import { page } from '$app/stores';
 	import favicon from '$lib/assets/favicon.svg';
 	import '../styles/global.scss';
-	import { page } from '$app/stores';
 
 	let { children } = $props();
 
