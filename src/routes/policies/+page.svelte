@@ -48,7 +48,7 @@
 	</ul>
 
 	<a href="https://forms.gle/QfS6JQTB5V8y1r1F9" target="_blank" class="suggest-policy-button">
-		<span class="icon">💡</span> เสนอนโยบาย
+		<button> เสนอนโยบายเพิ่มเติม </button>
 	</a>
 </main>
 
@@ -109,27 +109,17 @@
 	}
 
 	.suggest-policy-button {
+		margin-top: 16px;
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		margin: 16px auto 0;
-		padding: 12px 24px;
-		background-color: #28a745; /* Green color */
-		color: #fff;
 		text-decoration: none;
-		border-radius: 4px;
-		font-size: 16px;
 		text-align: center;
 		transition: background-color 0.3s;
-		width: fit-content;
 	}
 
 	.suggest-policy-button .icon {
 		margin-right: 8px;
 		font-size: 18px;
-	}
-
-	.suggest-policy-button:hover {
-		background-color: #218838; /* Darker green on hover */
 	}
 </style>
