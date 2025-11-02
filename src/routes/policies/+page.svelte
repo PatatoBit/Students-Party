@@ -74,5 +74,11 @@
 		margin: 8px 0 0 0;
 		color: #666;
 		font-size: 14px;
+		display: -webkit-box;
+		line-clamp: 2;
+		-webkit-line-clamp: 2;
+		-webkit-box-orient: vertical;
+		overflow: hidden;
+		text-overflow: ellipsis;
 	}
 </style>
