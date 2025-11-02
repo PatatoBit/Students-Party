@@ -2,8 +2,19 @@
 	import Topbar from '$lib/components/Topbar.svelte';
 	import Footer from '$lib/components/Footer.svelte';
 	import { getPolicies } from '$lib/content/policies';
+	import { writable, derived } from 'svelte/store';
 
 	const policies = getPolicies();
+
+	const searchQuery = writable('');
+
+	const filteredPolicies = derived([searchQuery], ([$searchQuery]) => {
+		return policies.filter(
+			(p) =>
+				p.title.toLowerCase().includes($searchQuery.toLowerCase()) ||
+				excerpt(p.content).toLowerCase().includes($searchQuery.toLowerCase())
+		);
+	});
 
 	function excerpt(md: string, max = 160) {
 		const text = md
@@ -23,8 +34,10 @@
 <main class="container policies-page">
 	<h1 class="anakotmai">นโยบายทั้งหมด</h1>
 
+	<input type="text" placeholder="ค้นหานโยบาย..." bind:value={$searchQuery} class="search-box" />
+
 	<ul class="policy-list">
-		{#each policies as p}
+		{#each $filteredPolicies as p}
 			<a class="title" href={`/policy/${p.slug}`}>
 				<li class="policy-item">
 					<h3>{p.title}</h3>
@@ -33,6 +46,10 @@
 			</a>
 		{/each}
 	</ul>
+
+	<a href="https://forms.gle/QfS6JQTB5V8y1r1F9" target="_blank" class="suggest-policy-button">
+		<span class="icon">💡</span> เสนอนโยบาย
+	</a>
 </main>
 
 <Footer />
@@ -80,5 +97,39 @@
 		-webkit-box-orient: vertical;
 		overflow: hidden;
 		text-overflow: ellipsis;
+	}
+
+	.search-box {
+		width: 100%;
+		padding: 12px;
+		margin-bottom: 16px;
+		border: 1px solid #ccc;
+		border-radius: 4px;
+		font-size: 16px;
+	}
+
+	.suggest-policy-button {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		margin: 16px auto 0;
+		padding: 12px 24px;
+		background-color: #28a745; /* Green color */
+		color: #fff;
+		text-decoration: none;
+		border-radius: 4px;
+		font-size: 16px;
+		text-align: center;
+		transition: background-color 0.3s;
+		width: fit-content;
+	}
+
+	.suggest-policy-button .icon {
+		margin-right: 8px;
+		font-size: 18px;
+	}
+
+	.suggest-policy-button:hover {
+		background-color: #218838; /* Darker green on hover */
 	}
 </style>
