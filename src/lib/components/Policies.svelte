@@ -32,7 +32,7 @@
 	</div>
 
 	<div class="more-policies">
-		<a href="/policies">ดูเพิ่มเติม</a>
+		<a href="/policies">นโยบายทั้งหมด</a>
 	</div>
 </section>
 
