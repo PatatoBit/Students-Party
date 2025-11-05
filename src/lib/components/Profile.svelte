@@ -1,6 +1,18 @@
 <script>
 	const placeholder = (w = 400, h = 250, t = 'Image') =>
 		`https://placehold.co/${w}x${h}?text=${encodeURIComponent(t)}`;
+
+	const portfolioImages = [
+		{ src: '/images/profiles/ClassLeader.jpg', title: 'หัวหน้าห้องห้อง 131 และ 161' },
+		{ src: '/images/profiles/MonkAssistant.jpg', title: 'อาสาตัวแทนศิษย์พระ' },
+		{
+			src: '/images/profiles/SportsFestivalDonation.jpg',
+			title: 'บริจาคเครื่องดื่มและขนมงานกีฬาสี'
+		},
+		{ src: "/images/profiles/Teacher's day.jpg", title: 'ตัวแทนถือพานไหว้ครู' },
+		{ src: '/images/profiles/WellBehavedStudentAward.jpg', title: 'รางวัลนักเรียนประพฤติดี' },
+		{ src: '/images/profiles/MathTopScorer.jpg', title: 'คะแนนคณิตศาสตร์เพิ่มเติมสูงสุด' }
+	];
 </script>
 
 <section class="profile">
@@ -41,6 +53,20 @@
 			</div>
 		</div>
 	</div>
+
+	<div class="portfolio-section">
+		<h3 class="anakotmai">ผลงาน</h3>
+		<div class="portfolio-gallery">
+			{#each portfolioImages as image}
+				<div class="portfolio-item">
+					<img src={image.src} alt={image.title} />
+					<div class="portfolio-caption">
+						<p>{image.title}</p>
+					</div>
+				</div>
+			{/each}
+		</div>
+	</div>
 </section>
 
 <style>
@@ -59,6 +85,10 @@
 		flex: 0 0 300px;
 		display: flex;
 		justify-content: center;
+
+		img {
+			object-fit: cover;
+		}
 	}
 	.profile-image img {
 		width: 100%;
@@ -128,6 +158,59 @@
 		height: 18px;
 	}
 
+	.portfolio-section {
+		margin-top: 48px;
+	}
+
+	.portfolio-section h3 {
+		color: #2b2d42;
+		margin-bottom: 24px;
+		font-size: 24px;
+		font-weight: 700;
+	}
+
+	.portfolio-gallery {
+		display: column;
+		column-count: 3;
+		column-gap: 16px;
+	}
+
+	.portfolio-item {
+		break-inside: avoid;
+		margin-bottom: 16px;
+		border-radius: 12px;
+		overflow: hidden;
+		background: #fff;
+		box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+		transition:
+			transform 0.3s,
+			box-shadow 0.3s;
+	}
+
+	.portfolio-item:hover {
+		transform: translateY(-4px);
+		box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+	}
+
+	.portfolio-item img {
+		width: 100%;
+		height: auto;
+		display: block;
+	}
+
+	.portfolio-caption {
+		padding: 12px 16px;
+		background: #fff;
+	}
+
+	.portfolio-caption p {
+		margin: 0;
+		font-size: 14px;
+		font-weight: 600;
+		color: #2b2d42;
+		text-align: center;
+	}
+
 	@media (max-width: 900px) {
 		.profile-image {
 			order: 1;
@@ -145,6 +228,16 @@
 
 		.social-icons {
 			justify-content: center;
+		}
+
+		.portfolio-gallery {
+			column-count: 2;
+		}
+	}
+
+	@media (max-width: 600px) {
+		.portfolio-gallery {
+			column-count: 1;
 		}
 	}
 </style>

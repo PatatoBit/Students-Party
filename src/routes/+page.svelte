@@ -10,8 +10,8 @@
 <Hero />
 
 <main class="container main">
-	<Profile />
 	<Policies />
+	<Profile />
 </main>
 
 <Footer />

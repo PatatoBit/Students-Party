@@ -56,6 +56,9 @@
 		font-weight: 700;
 		margin: 0;
 		max-width: 560px;
+
+		/* Text shadow */
+		text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 	}
 	.score-box {
 		display: flex;
